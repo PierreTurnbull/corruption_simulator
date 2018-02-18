@@ -23,6 +23,8 @@ body {
     width: 1320px;
     margin: auto;
     color: #500000; }
+    .sentence_container .sentence .selected_text {
+      color: #C80000; }
 
 .main_container {
   width: 1320px;
@@ -83,7 +85,6 @@ body {
       grid-row: 2 / 3;
       height: 39px;
       width: 100%;
-      background-color: #ff7d64;
       position: relative;
       font-family: "custom_lato";
       font-size: 24px;
@@ -100,13 +101,16 @@ body {
         left: -17px; }
       .main_container .form .input_verif::after {
         right: -17px; }
-    .main_container .form .input_find_verif::before {
-      border-left: 17px solid transparent;
-      border-top: 39px solid #ff7d64; }
-    .main_container .form .input_find_verif::after {
-      border-right: 17px solid transparent;
-      border-top: 39px solid #ff7d64; }
+    .main_container .form .input_find_verif {
+      background-color: #ff7d64; }
+      .main_container .form .input_find_verif::before {
+        border-left: 17px solid transparent;
+        border-top: 39px solid #ff7d64; }
+      .main_container .form .input_find_verif::after {
+        border-right: 17px solid transparent;
+        border-top: 39px solid #ff7d64; }
     .main_container .form .input_replace_verif {
+      background-color: #ff7d64;
       align-self: end; }
       .main_container .form .input_replace_verif::before {
         border-left: 17px solid transparent;
@@ -114,6 +118,18 @@ body {
       .main_container .form .input_replace_verif::after {
         border-right: 17px solid transparent;
         border-bottom: 39px solid #ff7d64; }
+    .main_container .form .input_find_verif_wrong {
+      background-color: red; }
+      .main_container .form .input_find_verif_wrong::before {
+        border-top: 39px solid red; }
+      .main_container .form .input_find_verif_wrong::after {
+        border-top: 39px solid red; }
+    .main_container .form .input_replace_verif_wrong {
+      background-color: red; }
+      .main_container .form .input_replace_verif_wrong::before {
+        border-bottom: 30px solid red; }
+      .main_container .form .input_replace_verif_wrong::after {
+        border-bottom: 39px solid red; }
     .main_container .form .timer {
       grid-column: 1 / 4;
       grid-row: 2 / 3;

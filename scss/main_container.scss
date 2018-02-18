@@ -65,7 +65,6 @@
       grid-row: 2 / 3;
       height: 39px;
       width: 100%;
-      background-color: #ff7d64;
       position: relative;
       font-family: "custom_lato";
       font-size: 24px;
@@ -87,6 +86,7 @@
       }
     }
     .input_find_verif {
+      background-color: #ff7d64;
       &::before {
         border-left: 17px solid transparent;
         border-top: 39px solid #ff7d64;
@@ -97,6 +97,7 @@
       }
     }
     .input_replace_verif {
+      background-color: #ff7d64;
       align-self: end;
       &::before {
         border-left: 17px solid transparent;
@@ -105,6 +106,24 @@
       &::after {
         border-right: 17px solid transparent;
         border-bottom: 39px solid #ff7d64;
+      }
+    }
+    .input_find_verif_wrong {
+      background-color: red;
+      &::before {
+        border-top: 39px solid red;
+      }
+      &::after {
+        border-top: 39px solid red;
+      }
+    }
+    .input_replace_verif_wrong {
+      background-color: red;
+      &::before {
+        border-bottom: 30px solid red;
+      }
+      &::after {
+        border-bottom: 39px solid red;
       }
     }
     .timer {
