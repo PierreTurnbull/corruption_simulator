@@ -1,0 +1,14 @@
+.sentence_container {
+  height: 150px;
+  background-color: #ff5050;
+  padding-top: 12px;
+  box-sizing: border-box;
+  .sentence {
+    font-size: 40px;
+    font-family: "custom_lato", helvetica, arial;
+    line-height: 62px;
+    width: 1320px;
+    margin: auto;
+    color: #500000;
+  }
+}

@@ -1,0 +1,130 @@
+body {
+  background-color: #fff0f0;
+  text-align: center; }
+
+@font-face {
+  font-family: "custom_lato";
+  src: url("fonts/lato/lato_regular.ttf"); }
+@font-face {
+  font-family: "custom_century_gothic_regular";
+  src: url("fonts/century_gothic/century_gothic_regular.ttf"); }
+@font-face {
+  font-family: "custom_century_gothic_bold";
+  src: url("fonts/century_gothic/century_gothic_bold.ttf"); }
+.sentence_container {
+  height: 150px;
+  background-color: #ff5050;
+  padding-top: 12px;
+  box-sizing: border-box; }
+  .sentence_container .sentence {
+    font-size: 40px;
+    font-family: "custom_lato", helvetica, arial;
+    line-height: 62px;
+    width: 1320px;
+    margin: auto;
+    color: #500000; }
+
+.main_container {
+  width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 150px);
+  grid-template-rows: repeat(4, 195px);
+  grid-column-gap: 17px; }
+  .main_container .sentence_say {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 150px 120px 0;
+    border-color: transparent #ff5050 transparent transparent;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; }
+  .main_container .illustration_container {
+    grid-column: 1 / 4;
+    grid-row: 2 / 5; }
+  .main_container .form {
+    grid-column: 5 / 8;
+    grid-row: 2 / 5;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-column-gap: 17px;
+    grid-template-rows: repeat(3, 195px); }
+    .main_container .form .input_container {
+      grid-column: 1 / 4;
+      height: 0;
+      width: 424px;
+      border-right: 30px solid transparent;
+      border-left: 30px solid transparent;
+      position: relative; }
+      .main_container .form .input_container input {
+        width: 100%;
+        height: 65px;
+        background-color: transparent;
+        text-align: center;
+        font-family: "custom_lato";
+        font-size: 40px;
+        position: absolute;
+        left: 0;
+        color: #500000; }
+        .main_container .form .input_container input::placeholder {
+          font-size: 40px;
+          color: #A00; }
+    .main_container .form .input_find_container {
+      grid-row: 1 / 2;
+      align-self: end;
+      border-bottom: 65px solid #ff5050; }
+    .main_container .form .input_replace_container {
+      grid-row: 3 / 4;
+      border-top: 65px solid #ff5050; }
+      .main_container .form .input_replace_container input {
+        top: -65px; }
+    .main_container .form .input_verif {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      height: 39px;
+      width: 100%;
+      background-color: #ff7d64;
+      position: relative;
+      font-family: "custom_lato";
+      font-size: 24px;
+      padding-top: 5px;
+      color: #500000;
+      box-sizing: border-box; }
+      .main_container .form .input_verif::before, .main_container .form .input_verif::after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0; }
+      .main_container .form .input_verif::before {
+        left: -17px; }
+      .main_container .form .input_verif::after {
+        right: -17px; }
+    .main_container .form .input_find_verif::before {
+      border-left: 17px solid transparent;
+      border-top: 39px solid #ff7d64; }
+    .main_container .form .input_find_verif::after {
+      border-right: 17px solid transparent;
+      border-top: 39px solid #ff7d64; }
+    .main_container .form .input_replace_verif {
+      align-self: end; }
+      .main_container .form .input_replace_verif::before {
+        border-left: 17px solid transparent;
+        border-bottom: 39px solid #ff7d64; }
+      .main_container .form .input_replace_verif::after {
+        border-right: 17px solid transparent;
+        border-bottom: 39px solid #ff7d64; }
+    .main_container .form .timer {
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+      height: 8px;
+      width: 100%;
+      margin: auto;
+      background-color: #ffc2c0;
+      align-self: center; }
+
+@media (max-height: 930px) {
+  .main_container {
+    grid-template-rows: 125px repeat(3, 195px); } }
+
+/*# sourceMappingURL=style.css.map */
