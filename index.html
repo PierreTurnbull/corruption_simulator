@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Corruption Simulator</title>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
+    <div class="modal_container">
+      <div class="modal_quit">
+        <span class="modal_quit_bar"></span>
+        <span class="modal_quit_bar"></span>
+      </div>
+    </div>
     <section class="sentence_container">
       <p class="sentence">"Lots of homeless people died in the streets during winter. Meanwhile, the government increased the taxes."</p>
     </section>
@@ -17,12 +23,12 @@
       <div class="illustration_container">
         <img class="illustration" src="img/illustration.jpg" alt="Oops... It seems that Mr Robert is busy right now..." title="Mr Robert">
       </div>
+      <div class="results">results</div>
       <form class="form">
         <div class="input_container input_find_container">
           <input type="text" class="input_find" placeholder="Find...">
         </div>
         <div class="input_verif input_find_verif input_find_verif_wrong">no match!</div>
-        <div class="timer"></div>
         <!-- <div class="input_verif input_replace_verif">no match!</div> -->
         <div class="input_container input_replace_container">
           <input type="text" class="input_replace" placeholder="Replace...">

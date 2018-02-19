@@ -1,3 +1,5 @@
+$main_red: #ff5050;
+
 .main_container {
   width: 1320px;
   margin: auto;
@@ -10,13 +12,50 @@
     height: 0;
     border-style: solid;
     border-width: 0 150px 120px 0;
-    border-color: transparent #ff5050 transparent transparent;
+    border-color: transparent $main_red transparent transparent;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
   .illustration_container {
     grid-column: 1 / 4;
     grid-row: 2 / 5;
+  }
+  .results {
+    font-family: "custom_lato", helvetica, arial;
+    font-size: 30px;
+    color: #500000;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    align-self: center;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    width: 195px;
+    height: 39px;
+    background-color: $main_red;
+    position: relative;
+    margin-left: -95px;
+    cursor: pointer;
+    &:hover {
+      background-color: red;
+      &::before, &::after {
+        border-bottom: 39px solid red;
+      }
+    }
+    &::before, &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-bottom: 39px solid $main_red;
+    }
+    &::before {
+      border-left: 17px solid transparent;
+      left: -17px;
+    }
+    &::after {
+      border-right: 17px solid transparent;
+      right: -17px;
+    }
   }
   .form {
     grid-column: 5 / 8;
@@ -37,11 +76,23 @@
         height: 65px;
         background-color: transparent;
         text-align: center;
-        font-family: "custom_lato";
+        font-family: "custom_lato", helvetica, arial;
         font-size: 40px;
         position: absolute;
         left: 0;
         color: #500000;
+        &::-webkit-input-placeholder {
+          font-size: 40px;
+          color: #A00;
+        }
+        &:-ms-input-placeholder {
+          font-size: 40px;
+          color: #A00;
+        }
+        &::-ms-input-placeholder {
+          font-size: 40px;
+          color: #A00;
+        }
         &::placeholder {
           font-size: 40px;
           color: #A00;
@@ -50,12 +101,13 @@
     }
     .input_find_container {
       grid-row: 1 / 2;
-      align-self: end;
-      border-bottom: 65px solid #ff5050;
+      -ms-flex-item-align: end;
+          align-self: end;
+      border-bottom: 65px solid $main_red;
     }
     .input_replace_container {
       grid-row: 3 / 4;
-      border-top: 65px solid #ff5050;
+      border-top: 65px solid $main_red;
       input {
         top: -65px;
       }
@@ -66,11 +118,12 @@
       height: 39px;
       width: 100%;
       position: relative;
-      font-family: "custom_lato";
+      font-family: "custom_lato", helvetica, arial;
       font-size: 24px;
       padding-top: 5px;
       color: #500000;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       &::before, &::after {
         content: "";
         width: 0;
@@ -98,7 +151,8 @@
     }
     .input_replace_verif {
       background-color: #ff7d64;
-      align-self: end;
+      -ms-flex-item-align: end;
+          align-self: end;
       &::before {
         border-left: 17px solid transparent;
         border-bottom: 39px solid #ff7d64;
@@ -125,15 +179,6 @@
       &::after {
         border-bottom: 39px solid red;
       }
-    }
-    .timer {
-      grid-column: 1 / 4;
-      grid-row: 2 / 3;
-      height: 8px;
-      width: 100%;
-      margin: auto;
-      background-color: #ffc2c0;
-      align-self: center;
     }
   }
 }

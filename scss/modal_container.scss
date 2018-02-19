@@ -1,0 +1,48 @@
+.modal_container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1000;
+  padding: 75px 200px 100px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  .modal_title {
+    font-family: "custom_lato", helvetica, arial;
+    font-size: 60px;
+    margin-bottom: 60px;
+    color: #500000;
+  }
+  .modal_quit {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 50px;
+    cursor: pointer;
+    position: relative;
+    &_bar {
+      position: absolute;
+      display: block;
+      height: 12px;
+      width: 100%;
+      background-color: #500000;
+      top: 30px;
+      transform: rotate(45deg);
+      border-radius: 3px;
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+    &:hover .modal_quit_bar{
+      background-color: #800000;
+    }
+  }
+  .changed_sentence_list {
+    font-family: "custom_lato", helvetica, arial;
+    font-size: 40px;
+    color: #500000;
+    line-height: 70px;
+  }
+}

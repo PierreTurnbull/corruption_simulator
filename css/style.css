@@ -1,16 +1,60 @@
 body {
   background-color: #fff0f0;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  overflow: hidden; }
 
 @font-face {
   font-family: "custom_lato";
-  src: url("fonts/lato/lato_regular.ttf"); }
+  src: url("../fonts/lato/lato_regular.ttf"); }
 @font-face {
   font-family: "custom_century_gothic_regular";
-  src: url("fonts/century_gothic/century_gothic_regular.ttf"); }
+  src: url("../fonts/century_gothic/century_gothic_regular.ttf"); }
 @font-face {
   font-family: "custom_century_gothic_bold";
-  src: url("fonts/century_gothic/century_gothic_bold.ttf"); }
+  src: url("../fonts/century_gothic/century_gothic_bold.ttf"); }
+.modal_container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 1000;
+  padding: 75px 200px 100px;
+  box-sizing: border-box;
+  overflow-x: hidden; }
+  .modal_container .modal_title {
+    font-family: "custom_lato", helvetica, arial;
+    font-size: 60px;
+    margin-bottom: 60px;
+    color: #500000; }
+  .modal_container .modal_quit {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 50px;
+    cursor: pointer;
+    position: relative; }
+    .modal_container .modal_quit_bar {
+      position: absolute;
+      display: block;
+      height: 12px;
+      width: 100%;
+      background-color: #500000;
+      top: 30px;
+      transform: rotate(45deg);
+      border-radius: 3px; }
+      .modal_container .modal_quit_bar:last-child {
+        transform: rotate(-45deg); }
+    .modal_container .modal_quit:hover .modal_quit_bar {
+      background-color: #800000; }
+  .modal_container .changed_sentence_list {
+    font-family: "custom_lato", helvetica, arial;
+    font-size: 40px;
+    color: #500000;
+    line-height: 70px; }
+
 .sentence_container {
   height: 150px;
   background-color: #ff5050;
@@ -44,6 +88,37 @@ body {
   .main_container .illustration_container {
     grid-column: 1 / 4;
     grid-row: 2 / 5; }
+  .main_container .results {
+    font-family: "custom_lato", helvetica, arial;
+    font-size: 30px;
+    color: #500000;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    align-self: center;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    width: 195px;
+    height: 39px;
+    background-color: #ff5050;
+    position: relative;
+    margin-left: -95px;
+    cursor: pointer; }
+    .main_container .results:hover {
+      background-color: red; }
+      .main_container .results:hover::before, .main_container .results:hover::after {
+        border-bottom: 39px solid red; }
+    .main_container .results::before, .main_container .results::after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-bottom: 39px solid #ff5050; }
+    .main_container .results::before {
+      border-left: 17px solid transparent;
+      left: -17px; }
+    .main_container .results::after {
+      border-right: 17px solid transparent;
+      right: -17px; }
   .main_container .form {
     grid-column: 5 / 8;
     grid-row: 2 / 5;
@@ -63,16 +138,26 @@ body {
         height: 65px;
         background-color: transparent;
         text-align: center;
-        font-family: "custom_lato";
+        font-family: "custom_lato", helvetica, arial;
         font-size: 40px;
         position: absolute;
         left: 0;
         color: #500000; }
+        .main_container .form .input_container input::-webkit-input-placeholder {
+          font-size: 40px;
+          color: #A00; }
+        .main_container .form .input_container input:-ms-input-placeholder {
+          font-size: 40px;
+          color: #A00; }
+        .main_container .form .input_container input::-ms-input-placeholder {
+          font-size: 40px;
+          color: #A00; }
         .main_container .form .input_container input::placeholder {
           font-size: 40px;
           color: #A00; }
     .main_container .form .input_find_container {
       grid-row: 1 / 2;
+      -ms-flex-item-align: end;
       align-self: end;
       border-bottom: 65px solid #ff5050; }
     .main_container .form .input_replace_container {
@@ -86,10 +171,11 @@ body {
       height: 39px;
       width: 100%;
       position: relative;
-      font-family: "custom_lato";
+      font-family: "custom_lato", helvetica, arial;
       font-size: 24px;
       padding-top: 5px;
       color: #500000;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box; }
       .main_container .form .input_verif::before, .main_container .form .input_verif::after {
         content: "";
@@ -111,6 +197,7 @@ body {
         border-top: 39px solid #ff7d64; }
     .main_container .form .input_replace_verif {
       background-color: #ff7d64;
+      -ms-flex-item-align: end;
       align-self: end; }
       .main_container .form .input_replace_verif::before {
         border-left: 17px solid transparent;
@@ -130,14 +217,6 @@ body {
         border-bottom: 30px solid red; }
       .main_container .form .input_replace_verif_wrong::after {
         border-bottom: 39px solid red; }
-    .main_container .form .timer {
-      grid-column: 1 / 4;
-      grid-row: 2 / 3;
-      height: 8px;
-      width: 100%;
-      margin: auto;
-      background-color: #ffc2c0;
-      align-self: center; }
 
 @media (max-height: 930px) {
   .main_container {
